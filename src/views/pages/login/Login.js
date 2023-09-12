@@ -14,6 +14,7 @@ import {
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import { cilLockLocked, cilUser } from "@coreui/icons";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -50,9 +51,11 @@ const Login = () => {
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
-                          Login
-                        </CButton>
+                        <NavLink to="/dashboard">
+                          <CButton color="primary" className="px-4">
+                            Login
+                          </CButton>
+                        </NavLink>
                       </CCol>
                       <CCol xs={6} className="text-right">
                         <CButton color="link" className="px-0">

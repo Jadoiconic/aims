@@ -9,7 +9,7 @@ import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 
 // sidebar nav config
-import navigation from '../_nav'
+import navigation from '../navs'
 import { NavLink } from 'react-router-dom'
 
 const AppSidebar = () => {
@@ -28,7 +28,7 @@ const AppSidebar = () => {
     >
       <CSidebarBrand className="d-none d-md-flex d-lg-flex bg-white" style={{background:'#dde'}}>
         <NavLink to="/dashboard" className='text-decoration-none'>
-          <h2>Clearance</h2>
+          <h2>AIMS</h2>
         </NavLink>
       </CSidebarBrand>
 

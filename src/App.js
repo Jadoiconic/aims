@@ -2,7 +2,7 @@ import React, { Component, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./scss/style.scss";
 import Users from "./views/pages/users/Users";
-import Dashboard from "./views/dashboard/Dashboard";
+import Dashboard from "./views/pages/dashboard/Dashboard";
 
 const loading = (
   <div className="pt-3 text-center">
