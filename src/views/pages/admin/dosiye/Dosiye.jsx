@@ -1,14 +1,12 @@
 import React from 'react'
 import DefaultLayout from 'src/layout/DefaultLayout'
 
-const Users = () => {
+const Dosiye = () => {
   return (
-    <>
     <DefaultLayout>
-        <h1>Welcome to home</h1>
+        <h1>Dosiye yanjye</h1>
     </DefaultLayout>
-    </>
   )
 }
 
-export default Users
+export default Dosiye
