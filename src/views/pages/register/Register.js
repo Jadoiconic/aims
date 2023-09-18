@@ -24,7 +24,7 @@ const Register = () => {
               <CCardBody className="p-4">
                 <CForm>
                   <h1>Register</h1>
-                  <p className="text-medium-emphasis">Create your account</p>
+                  <p className="text-medium-emphasis">Add a New User</p>
                   <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilUser} />
@@ -56,7 +56,7 @@ const Register = () => {
                     />
                   </CInputGroup>
                   <div className="d-grid">
-                    <CButton color="primary">Create Account</CButton>
+                    <CButton color="primary">Save User Account</CButton>
                   </div>
                 </CForm>
               </CCardBody>
