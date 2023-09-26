@@ -25,7 +25,7 @@ const AppHeaderDropdown = () => {
         </CDropdownHeader>
 
         <CDropdownDivider />
-        <CDropdownItem to="#">
+        <CDropdownItem href="/">
           <CIcon icon={cilAccountLogout} className="me-2" />
           Sign Out
         </CDropdownItem>
