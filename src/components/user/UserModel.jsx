@@ -11,7 +11,7 @@ const UserModel = (props) => {
           aria-labelledby="ScrollingLongContentExampleLabel"
         >
           <CModalHeader>
-            <CModalTitle id="ScrollingLongContentExampleLabel">Modal title</CModalTitle>
+            <CModalTitle id="ScrollingLongContentExampleLabel">Add New User</CModalTitle>
           </CModalHeader>
           <CModalBody>
             

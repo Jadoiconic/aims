@@ -11,7 +11,7 @@ const DocumentModel = (props) => {
           aria-labelledby="ScrollingLongContentExampleLabel"
         >
           <CModalHeader>
-            <CModalTitle id="ScrollingLongContentExampleLabel">Modal title</CModalTitle>
+            <CModalTitle id="ScrollingLongContentExampleLabel">Add New Document</CModalTitle>
           </CModalHeader>
           <CModalBody>
             

@@ -20,13 +20,12 @@ const Dosiye = () => {
           <CButton color="primary" onClick={() => setVisible(!visible)} className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New Document</CButton>
         </div>
         <div>
-          <table className="table table-striped text-center table-secondary responsive">
+        <table className="table table-striped text-center table-secondary responsive">
             <thead className="bg-dark text-white">
               <th className="p-2">No</th>
-              <th className="p-2">First Name</th>
-              <th className="p-2">Last Name</th>
-              <th className="p-2">Id</th>
-              <th className="p-2">Position</th>
+              <th className="p-2">Ikirego</th>
+              <th className="p-2">PID</th>
+              <th className="p-2">Impamvu</th>
               <th className="p-2" colSpan={2}>
                 Actions
               </th>
@@ -35,11 +34,10 @@ const Dosiye = () => {
               {[1, 2, 3, 4, 5].map((item, key) => (
                 <tr key={key}>
                   <td>{key + 1}</td>
-                  <td>fistName</td>
-                  <td>lastName</td>
-                  <td>15342342</td>
-                  <td>Manager</td>
-                  <td>Edit</td>
+                  <td>Ubujurire</td>
+                  <td>CRV342#FsFsa42</td>
+                  <td>Impamvu</td>
+                  <td>Edit({item})</td>
                   <td>Delete</td>
                 </tr>
               ))}
