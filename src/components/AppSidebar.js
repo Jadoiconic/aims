@@ -32,11 +32,11 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand
-        className="d-none d-md-flex d-lg-flex bg-white"
-        style={{ background: "#dde" }}
+        className="d-none d-md-flex d-lg-flex bg-dark"
+        style={{ background: "#666600" }}
       >
         <NavLink to="/dashboard" className="text-decoration-none">
-          <h2>AIMS</h2>
+          <h2 className="text-white">AIMS</h2>
         </NavLink>
       </CSidebarBrand>
 

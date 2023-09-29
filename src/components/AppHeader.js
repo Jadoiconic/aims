@@ -11,16 +11,16 @@ const AppHeader = () => {
   const sidebarShow = useSelector((state) => state.sidebarShow);
 
   return (
-    <CHeader position="sticky" className="mb-4">
+    <CHeader position="sticky" className="mb-4 bg-dark" style={{backgroundColor:'#000'}}>
       <CContainer fluid>
         <CHeaderToggler
-          className="ps-1"
+          className="ps-1 text-white"
           onClick={() => dispatch({ type: "set", sidebarShow: !sidebarShow })}
         >
-          <CIcon icon={cilMenu} size="lg" />
+          <CIcon icon={cilMenu} size="lg"className="text-white"/>
         </CHeaderToggler>
         <CHeaderNav className="d-none d-md-flex me-auto"></CHeaderNav>
-        <CHeaderNav>Jado</CHeaderNav>
+        <CHeaderNav className="text-white">Jado</CHeaderNav>
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />
         </CHeaderNav>
