@@ -25,6 +25,7 @@ const Dosiye = () => {
               <th className="p-2">No</th>
               <th className="p-2">Ikirego</th>
               <th className="p-2">PID</th>
+              <th className="p-2">User 1 VS User 2</th>
               <th className="p-2">Impamvu</th>
               <th className="p-2" colSpan={2}>
                 Actions
@@ -36,6 +37,7 @@ const Dosiye = () => {
                   <td>{key + 1}</td>
                   <td>Ubujurire</td>
                   <td>CRV342#FsFsa42</td>
+                  <td>Name 1 & Name 2</td>
                   <td>Impamvu</td>
                   <td>Edit({item})</td>
                   <td>Delete</td>

@@ -18,28 +18,22 @@ const DocumentModel = (props) => {
             
           <form>
           <div className="mb-3">
-            <label className="form-label">First  Name</label>
+            <label className="form-label">Names 1</label>
             <input type="text" className="form-control" />
           </div>
           <div className="mb-3">
-            <label className="form-label">Last  Name</label>
+            <label className="form-label">Name 2</label>
             <input type="text" className="form-control" />
           </div>
           <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input type="email" className="form-control" />
+            <label className="form-label">Ikirego</label>
+            <input type="text" className="form-control" />
           </div>
           <div className="mb-3">
-            <label className="form-label">National ID</label>
-            <input type="number" className="form-control" />
+            <label className="form-label">Impamvu</label>
+            <textarea type="text" className="form-control" />
           </div>
-          <div className="mb-3">
-            <label className="form-label">National ID</label>
-            <select className='form-control'>
-                <option selected>Select Position</option>
-                <option>Manager</option>
-            </select>
-          </div>
+          
          
         </form>
 
@@ -49,7 +43,7 @@ const DocumentModel = (props) => {
             <CButton color="secondary" onClick={() => props.setVisible(false)}>
               Close
             </CButton>
-            <CButton color="primary">Save changes</CButton>
+            <CButton color="primary">Save Record</CButton>
           </CModalFooter>
         </CModal>
       </>
