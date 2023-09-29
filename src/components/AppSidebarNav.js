@@ -16,7 +16,7 @@ export const AppSidebarNav = ({ items }) => {
   const navItem = (item, index) => {
     const { component, name, icon, role, ...rest } = item;
     const Component = component;
-    if (role === "admin") {
+    if (role === "user") {
       return (
         <Component
           {...(rest.to &&

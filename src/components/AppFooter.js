@@ -13,7 +13,7 @@ const AppFooter = () => {
       <div className="ms-auto">
         <span className="me-1">Powered by</span>
         <a href="https://fidalix.com" target="_blank" rel="noopener noreferrer">
-          MustaDev
+          CodeWithJado
         </a>
       </div>
     </CFooter>
