@@ -24,16 +24,21 @@ const Login = () => {
   const [loading,setLoading] = useState(true)
   const handleLogin = async (e) => {
     e.preventDefault()
-    alert("TEst if it works")
     try {
       setLoading(true)
-      const { error } = await supabase.auth.signInWithPassword()
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+      })
       if(error){
-        alert("Incorect Email or Password")
+        console.log("Incorect Email or Password")
       }
-      
+
+      if(data){
+        console.log(data)
+      }
     } catch (error) {
-      
+      console.log(error.message)
     }finally{
       setLoading(false)
     }
@@ -46,7 +51,6 @@ const Login = () => {
             <CCardGroup>
               <CCard className="p-4">
                 <CCardBody>
-                  <CForm>
                     <h1>Login</h1>
                     <p className="text-medium-emphasis">
                       Sign In to your account 
@@ -75,17 +79,16 @@ const Login = () => {
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                          <CButton type="submit" color="primary" className="px-4">
+                          <CButton color="primary" className="px-4" onClick={handleLogin}>
                             Login
                           </CButton>
                       </CCol>
                       <CCol xs={6} className="text-right">
-                        <CButton onClick={() => handleLogin} color="link" className="px-0">
+                        <CButton  color="link" className="px-0">
                           Forgot password?
                         </CButton>
                       </CCol>
                     </CRow>
-                  </CForm>
                 </CCardBody>
               </CCard>
             </CCardGroup>
