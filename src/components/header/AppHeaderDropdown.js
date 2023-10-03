@@ -12,8 +12,17 @@ import { cilAccountLogout, cilSettings } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 
 import avatar8 from "./../../assets/images/avatars/profile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const AppHeaderDropdown = () => {
+  const navigate = useNavigate()
+  const logout = async() => {
+    const { error } = await supabase.auth.signOut()
+    navigate("/")
+    if(error){
+      console.log(error)
+    }
+  }
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
@@ -26,7 +35,7 @@ const AppHeaderDropdown = () => {
 
         <CDropdownDivider />
         <CDropdownItem href="/">
-          <CIcon icon={cilAccountLogout} className="me-2" />
+          <CIcon icon={cilAccountLogout} onClick={logout} className="me-2" />
           Sign Out
         </CDropdownItem>
       </CDropdownMenu>

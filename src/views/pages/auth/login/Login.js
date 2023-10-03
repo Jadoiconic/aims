@@ -14,14 +14,16 @@ import {
 } from "@coreui/react";
 import CIcon from "@coreui/icons-react";
 import { cilAlignCenter, cilLockLocked, cilUser } from "@coreui/icons";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { supabase } from '../../../../client';
 
 
 const Login = () => {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  const [loading,setLoading] = useState(true)
+  const [loading,setLoading] = useState(false)
+  const [userError,setUserError] = useState('')
+  const navigation = useNavigate()
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
@@ -31,11 +33,12 @@ const Login = () => {
         password: password,
       })
       if(error){
-        console.log("Incorect Email or Password")
+        setUserError("Incorect Email or Password")
       }
 
-      if(data){
+      if(data.user){
         console.log(data)
+        navigation('/dashboard')
       }
     } catch (error) {
       console.log(error.message)
@@ -77,6 +80,7 @@ const Login = () => {
                         onChange={(e) => {e.preventDefault(); setPassword(e.target.value)}}
                       />
                     </CInputGroup>
+                    {userError && <div className="alert alert-danger">{userError}</div>}
                     <CRow>
                       <CCol xs={6}>
                           <CButton color="primary" className="px-4" onClick={handleLogin}>
