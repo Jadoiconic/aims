@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CAvatar,
   CDropdown,
@@ -17,12 +17,10 @@ import { useNavigate } from "react-router-dom";
 const AppHeaderDropdown = () => {
   const navigate = useNavigate()
   const logout = async() => {
-    const { error } = await supabase.auth.signOut()
+   await supabase.auth.signOut()
     navigate("/")
-    if(error){
-      console.log(error)
-    }
   }
+  
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
