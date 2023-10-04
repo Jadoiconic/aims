@@ -6,7 +6,6 @@ import {
   CCardGroup,
   CCol,
   CContainer,
-  CForm,
   CFormInput,
   CInputGroup,
   CInputGroupText,
@@ -76,7 +75,7 @@ const Login = () => {
     return { user, error: null };
   }
 
-  if (loading) return <>Loading</>;
+  if (loading) return <div className="d-flex justify-content-center align-items-center" style={{width:'100%',height:'100vh',backgroundColor:'#eee'}}><span className="spinner-border text-muted"> </span></div>;
   return (
     <>
       {currnetUser !== null ? (
@@ -99,7 +98,7 @@ const Login = () => {
                         </CInputGroupText>
                         <CFormInput
                           type="email"
-                          placeholder="Username"
+                          placeholder="email"
                           autoComplete="username"
                           onChange={(e) => {
                             e.preventDefault();
