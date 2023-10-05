@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { supabase } from "src/client";
+import userRef from "src/utility/constants";
 
 export const AppSidebarNav = ({ items }) => {
   
@@ -17,28 +18,27 @@ export const AppSidebarNav = ({ items }) => {
 
   const navItem = (item, index) => {
     const { component, name, icon, role, ...rest } = item;
-    // const [userRole, setUserRole] = React.useState(null);
+    const [userRole, setUserRole] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
+    useEffect(()=>{
+     try {
+      setLoading(true)
+      const getUserData = async () => {
+        const {data:{user}} = await supabase.auth.getUser()
+        const currentUser = userRef.filter(users=> users.id === user.id)
+        setUserRole(currentUser[0].role)
+      }
+      getUserData()
+     } catch (error) {
+      
+     }finally{
+      setLoading(false)
+     }
+    },[userRole])
 
-    // React.useEffect(() => {
-    //   const fetchUserRole = async () => {
-    //     const currentUser = supabase.auth.user();
-    //     console.log('Current User:', currentUser); // Debug: Check if currentUser is defined
-    
-    //     // if (currentUser) {
-    //     //   const role = await getUserRole(currentUser.id);
-    //     //   console.log('Fetched Role:', role); // Debug: Check the fetched user role
-    //     //   setUserRole(role);
-    //     // } else {
-    //     //   console.log('User is not authenticated.'); // Debug: Check if the user is not authenticated
-    //     // }
-    //   };
-    
-    //   fetchUserRole();
-    // }, []); // Empty dependency array ensures this effect runs once after the initial render
-    
     const Component = component;
-    // console.log(userRole)
-    if (role === 'admin') {
+    
+    if (role === userRole && !loading) {
       return (
         <Component
           {...(rest.to &&
